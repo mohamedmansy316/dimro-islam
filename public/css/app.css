@@ -1,0 +1,10 @@
+#streams #isPasted {
+  width: auto !important;
+}
+#streams iframe {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}

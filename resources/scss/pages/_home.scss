@@ -1,0 +1,27 @@
+#hero-section{
+    background-image: linear-gradient(#112f4b86, #112f4b86), url("../../public/images/hero-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .row{
+        height: 700px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h1, a{
+            color: #ffffff;
+        }
+        h1{
+            font-size: 60px;
+            padding: 0;
+        }
+    }
+    &::after{
+    position: absolute;
+    content: url('../../public/images/decor.png');
+    bottom: -343px;
+    left: -366px;
+    z-index: -1;
+    opacity: 0.2;
+    }
+}

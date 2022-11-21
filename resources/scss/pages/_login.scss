@@ -1,0 +1,35 @@
+.login-btn{
+    padding: 10px 20px;
+    width: auto;
+    display: block;
+    width: max-content;
+    margin-top: 25px;
+    color: #fff;
+    &:hover{
+        color: #fff;
+    }
+    &.google{
+        background: #DB4437;
+        &:hover{
+            background: #c03c30;
+        }
+        &:focus{
+            color: #fff;
+        }
+    }
+    &.facebook{
+        background: #3b5998;
+        &:hover{
+            background: #354f86;
+        }
+        &:focus{
+            color: #fff;
+        }
+    }
+}
+.social-title{
+    width: 100%;
+    text-align: center;
+    margin: 23px 0;
+    font-size: 18px;
+}
