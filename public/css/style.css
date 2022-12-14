@@ -3380,7 +3380,7 @@ textarea:focus {
   margin-bottom: 0px;
 }
 .header-action-wrap .same-style a {
-  font-size: 16px;
+  font-size: 20px;
   color: #23222E;
 }
 .header-action-wrap .same-style a:hover {
@@ -13138,8 +13138,9 @@ textarea:focus {
   color: #828495;
   border: 1px solid #E3E4E9;
   line-height: 1;
-  width: 31px;
-  height: 31px;
+  width: auto;
+  height: auto;
+  padding: 1px 5px;
   text-align: center;
   line-height: 29px;
 }
@@ -16553,15 +16554,21 @@ textarea:focus {
 .pro-pagination-style ul li {
   display: inline-block;
   margin: 0 1px;
+  color: #535353;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.pro-pagination-style ul li.active, .pro-pagination-style ul li:hover {
+  background-color: #262626;
+  color: #fff;
+  border: 1px solid #262626;
 }
 @media only screen and (max-width: 767px) {
   .pro-pagination-style ul li {
     margin: 0 4px;
   }
 }
-.pro-pagination-style ul li a {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #535353;
+.pro-pagination-style ul li span, .pro-pagination-style ul li a {
+  border: 1px solid rgba(0, 0, 0, 0);
   font-size: 16px;
   text-align: center;
   display: inline-block;
@@ -16570,29 +16577,25 @@ textarea:focus {
   line-height: 40px;
 }
 @media only screen and (max-width: 767px) {
-  .pro-pagination-style ul li a {
+  .pro-pagination-style ul li span, .pro-pagination-style ul li a {
     width: 40px;
     height: 40px;
     line-height: 40px;
   }
 }
-.pro-pagination-style ul li a.active, .pro-pagination-style ul li a:hover {
+.pro-pagination-style ul li span.active, .pro-pagination-style ul li span:hover, .pro-pagination-style ul li a.active, .pro-pagination-style ul li a:hover {
   background-color: #262626;
   color: #fff;
   border: 1px solid #262626;
 }
-.pro-pagination-style ul li a i {
+.pro-pagination-style ul li span i, .pro-pagination-style ul li a i {
   line-height: 40px;
   font-size: 24px;
 }
 @media only screen and (max-width: 767px) {
-  .pro-pagination-style ul li a i {
+  .pro-pagination-style ul li span i, .pro-pagination-style ul li a i {
     line-height: 40px;
   }
-}
-.pro-pagination-style ul li:last-child {
-  position: relative;
-  top: 2px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .pro-pagination-style.mt-70 {
@@ -21042,6 +21045,8 @@ h4.checkout-title::before {
 }
 .nice-select.nice-select-style-3 ul {
   width: 100%;
+  max-height: 250px;
+  overflow: auto;
 }
 .nice-select.nice-select-style-3.nice-select-shop {
   border: 1px solid #EFEFEF;

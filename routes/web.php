@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SourceController;
@@ -27,8 +28,12 @@ Route::get('streams', [PagesController::class , 'getStreams'])->name('streams');
 Route::get('blog', [BlogController::class , 'getBlogs'])->name('blogs');
 Route::get('blog/{id}', [BlogController::class , 'getSingleBlog'])->name('singleBlog');
 Route::get('search', [BlogController::class , 'getSearch'])->name('search.get');
-//Landing Page Stuff
+
+//Products
 Route::get('products/{filter_type?}/{filter_value?}', [ProductController::class , 'getAll'])->name('products');
+Route::get('product/{slug}/{id}', [ProductController::class , 'getSingle'])->name('product.single');
+Route::get('product/{id}', [ProductController::class , 'getProductData'])->name('product.data');
+
 Route::prefix('subjects')->group(function(){
     Route::get('all', [SubjectController::class , 'getAll'])->name('AllSubjects.get');
 });
@@ -78,6 +83,17 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [ProductController::class , 'getAdminProducts'])->name('admin.products.all');
             Route::get('new', [ProductController::class , 'getCreateProduct'])->name('admin.product.getCreate');
             Route::post('new', [ProductController::class , 'postCreateProduct'])->name('admin.product.postCreate');
+            Route::get('edit/{id}', [ProductController::class , 'getEditProduct'])->name('admin.product.getEdit');
+            Route::post('edit/{id}', [ProductController::class , 'postEditProduct'])->name('admin.product.postEdit');
+            Route::get('delete/{id}', [ProductController::class , 'deleteProduct'])->name('admin.product.delete');
+        });
+        Route::prefix('product/category')->group(function(){
+            Route::get('/', [ProductCategoryController::class , 'getAdminProductCategory'])->name('admin.productCategory.all');
+            Route::get('new', [ProductCategoryController::class , 'getCreateProductCategory'])->name('admin.productCategory.getCreate');
+            Route::post('new', [ProductCategoryController::class , 'postCreateProductCategory'])->name('admin.productCategory.postCreate');
+            Route::get('edit/{id}', [ProductCategoryController::class , 'getEditProductCategory'])->name('admin.productCategory.getEdit');
+            Route::post('edit/{id}', [ProductCategoryController::class , 'postEditProductCategory'])->name('admin.productCategory.postEdit');
+            Route::get('delete/{id}', [ProductCategoryController::class , 'ProductCategoryDelete'])->name('admin.productCategory.delete');
         });
         Route::prefix('blog')->group(function(){
             Route::get('/', [BlogController::class , 'getAdminBlogs'])->name('admin.blogs.all');

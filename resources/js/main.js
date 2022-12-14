@@ -1313,39 +1313,40 @@
 //         })
 //     });
 
-var WaveSurfer = require("wavesurfer.js");
-var RegionsPlugin = require("wavesurfer.js/dist/plugin/wavesurfer.regions.min.js");
-var CursorPlugin = require("wavesurfer.js/dist/plugin/wavesurfer.cursor.min.js");
-let wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    plugins: [
-        RegionsPlugin.create({}),
-        CursorPlugin.create({
-            showTime: true,
-            opacity: 1,
-            customShowTimeStyle: {
-                'background-color': '#CCA300',
-                color: '#fff',
-                padding: '2px',
-                'font-size': '10px'
-            }
-        })
-    ],
-    waveColor: '#ddddddbe',
-    progressColor: '#1B1A23',
-    barHeight: 0.6,
-    height:70,
-    barWidth: 2,
-    barRadius: 3,
-    barGap: 3
-});
-let audioPath = $('#waveform').attr('data-audio');
-    wavesurfer.load(audioPath);
-    var panner = wavesurfer.backend.ac.createPanner();
-    wavesurfer.backend.setFilter(panner);
-$('.play-sound').click(function(){
-    wavesurfer.playPause();
-    let audioIcon = $(this).children('svg');
-    console.log(audioIcon);
-    audioIcon.toggleClass('svg-inline--fa fa-play').toggleClass('svg-inline--fa fa-pause')
-});
+// var WaveSurfer = require("wavesurfer.js");
+// var RegionsPlugin = require("wavesurfer.js/dist/plugin/wavesurfer.regions.min.js");
+// var CursorPlugin = require("wavesurfer.js/dist/plugin/wavesurfer.cursor.min.js");
+// let wavesurfer = WaveSurfer.create({
+//     container: '#waveform',
+//     plugins: [
+//         RegionsPlugin.create({}),
+//         CursorPlugin.create({
+//             showTime: true,
+//             opacity: 1,
+//             customShowTimeStyle: {
+//                 'background-color': '#CCA300',
+//                 color: '#fff',
+//                 padding: '2px',
+//                 'font-size': '10px'
+//             }
+//         })
+//     ],
+//     waveColor: '#ddddddbe',
+//     progressColor: '#1B1A23',
+//     barHeight: 0.6,
+//     height:70,
+//     barWidth: 2,
+//     barRadius: 3,
+//     barGap: 3
+// });
+// let audioPath = $('#waveform').attr('data-audio');
+//     wavesurfer.load(audioPath);
+//     var panner = wavesurfer.backend.ac.createPanner();
+//     wavesurfer.backend.setFilter(panner);
+// $('.play-sound').click(function(){
+//     wavesurfer.playPause();
+//     let audioIcon = $(this).children('svg');
+//     console.log(audioIcon);
+//     audioIcon.toggleClass('svg-inline--fa fa-play').toggleClass('svg-inline--fa fa-pause')
+// });
+

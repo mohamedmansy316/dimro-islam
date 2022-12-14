@@ -3,7 +3,7 @@
 <script src="{{url('public/js/vendor/modernizr-3.11.7.min.js')}}"></script>
 <script src="{{url('public/js/vendor/jquery-v3.6.0.min.js')}}"></script>
 <script src="{{url('public/js/vendor/jquery-migrate-v3.3.2.min.js')}}"></script>
-<script src="{{url('public/js/vendor/popper.js')}}"></script>
+<script src="{{url('public/js/vendor/popper.min.js')}}"></script>
 <script src="{{url('public/js/plugins/slick.js')}}"></script>
 <script src="{{url('public/js/plugins/countdown.js')}}"></script>
 <script src="{{url('public/js/plugins/wow.js')}}"></script>
@@ -30,7 +30,3 @@
 <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.min.js"></script>
 {{-- Video Player --}}
 <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
-{{-- <script src="{{url('public/js/app.js')}}"></script> --}}
-{{-- <script>$(document).ready(function() {
-  $('select').niceSelect();
-});</script> --}}

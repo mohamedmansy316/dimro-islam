@@ -3,8 +3,9 @@
 use App\Models\Blog;
 use Illuminate\Support\Facades\Cookie;
 use Alkoumi\LaravelHijriDate\Hijri;
-    function getUserId(){
+use App\Models\Product;
 
+    function getUserId(){
         if(auth()->check()){
             return auth()->user()->id;
         }else{
@@ -21,6 +22,9 @@ use Alkoumi\LaravelHijriDate\Hijri;
             'is_featured' => 1,
             'is_active' => 1,
         ])->orderBy('created_at', 'DESC')->take(3)->get();
+    }
+    function getCategories(){
+        return Product::all();
     }
 ?>
 

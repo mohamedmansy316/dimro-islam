@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductCategoriesTable extends Migration
+class CreateBrandsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateProductCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_categories', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->enum('gender', ['male', 'female', 'unisex']);
-            $table->string('type');
-            $table->string('parent_id')->nullable();
-            $table->string('image');
-            $table->string('order_number');
-            $table->string('is_featured');
+            $table->string('slug');
+            $table->string('image')->default('brand.jpg');
+            $table->integer('is_featured')->default(0);
+            $table->integer('status')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +32,6 @@ class CreateProductCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_categories');
+        Schema::dropIfExists('brands');
     }
 }

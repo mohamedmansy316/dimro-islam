@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Book;
 use App\Models\Article;
 use App\Models\Audio;
+use App\Models\Product;
 use App\Models\Resource;
 use App\Models\User;
 use App\Models\Video;
@@ -28,7 +29,7 @@ class DatabaseSeeder extends Seeder
         //     'code' =>  mt_rand(100000, 999999),
         // ]);
         // Book::factory(10)->create();
-        Resource::factory(10)->create();
+        Product::factory(10)->create();
         // Audio::factory(10)->create();
         // Video::factory(10)->create();
 

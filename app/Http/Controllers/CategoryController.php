@@ -75,5 +75,4 @@ class CategoryController extends Controller{
         });
         return redirect()->route('admin.category.all')->withSuccess("Category Deleted Successfully");
     }
-    // Categories Control End
 }

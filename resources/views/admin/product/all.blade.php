@@ -24,22 +24,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse($AllBooks as $Book)
+                                            @forelse($AllProducts as $Product)
                                             <tr>
-                                                <td>{{$Book->title}}</td>
-                                                <td>{{$Book->Category->title}}</td>
-                                                <td>{{$Book->Author->name}}</td>
-                                                <td>{{$Book->Source->title}}</td>
-                                                <td>@if ($Book->BookStatus == "Active") <i class="fa fa-circle text-success mr-1"></i> {{$Book->BookStatus}} @elseif ($Book->BookStatus == "Inactive") <i class="fa fa-circle text-danger mr-1"></i> {{$Book->BookStatus}} @endif</td>
-                                                <td>@if ($Book->is_featured == 1) <i class="fa fa-circle text-success mr-1"></i> Yes @elseif ($Book->is_featured == 0) <i class="fa fa-circle text-danger mr-1"></i> No @endif</td>
+                                                <td>{{$Product->sku}}</td>
+                                                <td>{{$Product->title}}</td>
+                                                <td>{{$Product->Category->title}}</td>
+                                                <td>{{$Product->ProductStatus}}</td>
+                                                <td>{{$Product->price}}</td>
+                                                <td>@if ($Product->is_featured == 1) <i class="fa fa-circle text-success mr-1"></i> Yes @elseif ($Product->is_featured == 0) <i class="fa fa-circle text-danger mr-1"></i> No @endif</td>
                                                 <td>
 													<div class="dropdown">
 														<button type="button" class="btn btn-success light sharp" data-toggle="dropdown">
 															<svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item" href="{{route('admin.book.getEdit' , $Book->id)}}">Edit</a>
-															<a class="dropdown-item" href="{{route('admin.book.delete' , $Book->id)}}">Delete</a>
+															<a class="dropdown-item" href="{{route('admin.product.getEdit' , $Product->id)}}">Edit</a>
+															<a class="dropdown-item" href="{{route('admin.product.delete' , $Product->id)}}">Delete</a>
 														</div>
 													</div>
 												</td>

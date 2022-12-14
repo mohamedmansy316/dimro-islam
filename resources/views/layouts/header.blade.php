@@ -34,4 +34,5 @@
     <link rel="stylesheet" href="{{url('public/css/style.css')}}">
     <link rel="stylesheet" href="{{url('public/css/app.css')}}">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+
 </head>
